@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #1C1712;
+  background-image: radial-gradient(circle at 1px 1px, rgba(250,243,232,0.05) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background-color: #E8491D;
+  color: #FAF3E8;
+}
+
+/* Scroll reveal base states — driven by the Reveal component adding
+   `.is-visible` once the element enters the viewport. */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* string-light ticket divider used between sections (signature motif) */
+.ticket-edge {
+  position: relative;
+}
+.ticket-edge::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 14px;
+  background-image: radial-gradient(circle at 10px 0, transparent 9px, #1C1712 10px);
+  background-size: 28px 20px;
+  background-repeat: repeat-x;
+}
+
+/* Imagens reais entram com o mesmo ritmo das animações de scroll do site. */
+.scene-image img {
+  transform: scale(1.015);
+}
+.reveal.is-visible .scene-image img,
+.reveal-left.is-visible .scene-image img,
+.reveal-right.is-visible .scene-image img,
+.reveal-scale.is-visible .scene-image img {
+  transform: scale(1);
+}
+
+/* Barra de categorias sem poluir o visual em navegadores WebKit. */
+#cardapio *::-webkit-scrollbar {
+  height: 6px;
+}
+#cardapio *::-webkit-scrollbar-thumb {
+  background: rgba(255, 182, 39, 0.35);
+  border-radius: 999px;
+}
