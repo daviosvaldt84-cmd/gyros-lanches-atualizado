@@ -49,7 +49,7 @@ export default function OpeningHours() {
   }, [])
 
   return (
-    <div className="rounded-2xl border border-night-line bg-night-card p-6">
+    <div className="brand-card rounded-2xl border border-night-line p-6">
       <p className="font-display text-sm text-cream">⏰ Horário de funcionamento</p>
       <p className="mt-2 font-body text-sm text-smoke">
         {business.hours.daysLabel}: das 18h às 00h

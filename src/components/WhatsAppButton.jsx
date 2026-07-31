@@ -25,7 +25,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Fazer pedido pelo WhatsApp"
-      className="hidden md:flex fixed bottom-6 right-6 z-40 items-center gap-2 rounded-full bg-flame hover:bg-flame-light text-cream font-body font-semibold px-5 py-3.5 shadow-flame transition-all hover:scale-105 focus:outline-none focus-visible:ring-4 focus-visible:ring-headlight/60"
+      className="gold-button fixed bottom-6 right-6 z-40 hidden items-center gap-2 rounded-sm px-5 py-3.5 font-body font-extrabold shadow-flame transition-transform hover:scale-[1.04] focus:outline-none focus-visible:ring-4 focus-visible:ring-headlight/60 md:flex"
     >
       <span className="text-lg" aria-hidden="true">📱</span>
       Faça seu pedido!

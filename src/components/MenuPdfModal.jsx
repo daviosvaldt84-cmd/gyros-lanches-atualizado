@@ -30,7 +30,7 @@ export default function MenuPdfModal({ open, onClose }) {
         if (event.target === event.currentTarget) onClose()
       }}
     >
-      <div className="flex max-h-[94vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-night-line bg-night shadow-2xl">
+      <div className="flex max-h-[94vh] w-full max-w-5xl flex-col overflow-hidden rounded-2xl border border-headlight/35 bg-night shadow-2xl">
         <div className="flex items-center justify-between gap-4 border-b border-night-line px-4 py-3 md:px-6">
           <div>
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-headlight">Cardápio oficial</p>
@@ -69,14 +69,14 @@ export default function MenuPdfModal({ open, onClose }) {
               href={business.menuPdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-headlight/50 px-4 py-2 text-xs font-bold text-headlight transition-colors hover:bg-headlight hover:text-night"
+              className="outline-gold rounded-sm border px-4 py-2 text-xs font-bold transition-colors"
             >
               Abrir PDF
             </a>
             <a
               href={business.menuPdfUrl}
               download="cardapio-gyros-lanches.pdf"
-              className="rounded-full bg-flame px-4 py-2 text-xs font-bold text-cream transition-colors hover:bg-flame-light"
+              className="gold-button rounded-sm px-4 py-2 text-xs font-extrabold"
             >
               Baixar cardápio
             </a>

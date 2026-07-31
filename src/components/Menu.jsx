@@ -13,7 +13,7 @@ export default function Menu() {
   const activeGroup = menu.find((group) => group.category === active)
 
   return (
-    <section id="cardapio" className="border-t border-night-line py-20 md:py-28">
+    <section id="cardapio" className="brand-section py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="grid items-end gap-8 lg:grid-cols-[1.1fr_.9fr]">
           <div>
@@ -21,7 +21,7 @@ export default function Menu() {
               <RouteSign>Cardápio</RouteSign>
             </Reveal>
             <Reveal delay={80}>
-              <h2 className="mt-4 font-display text-3xl text-cream md:text-4xl">
+              <h2 className="mt-4 font-display text-3xl font-bold text-cream md:text-4xl">
                 Deu fome? Escolha seu favorito!
               </h2>
             </Reveal>
@@ -35,7 +35,7 @@ export default function Menu() {
                 <button
                   type="button"
                   onClick={() => setShowFullMenu(true)}
-                  className="rounded-full bg-headlight px-5 py-3 text-sm font-bold text-night transition-transform hover:scale-105 hover:bg-headlight-soft focus:outline-none focus-visible:ring-4 focus-visible:ring-headlight/50"
+                  className="gold-button rounded-sm px-5 py-3 text-sm font-extrabold transition-transform hover:scale-[1.03] focus:outline-none focus-visible:ring-4 focus-visible:ring-headlight/50"
                 >
                   📖 Visualizar cardápio completo
                 </button>
@@ -43,7 +43,7 @@ export default function Menu() {
                   href={business.menuPdfUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-night-line px-5 py-3 text-sm font-bold text-cream transition-colors hover:border-headlight/60 hover:text-headlight focus:outline-none focus-visible:ring-2 focus-visible:ring-headlight"
+                  className="outline-gold rounded-sm border px-5 py-3 text-sm font-bold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-headlight"
                 >
                   Abrir PDF
                 </a>
@@ -52,7 +52,7 @@ export default function Menu() {
           </div>
 
           <Reveal variant="right" delay={130}>
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-night-line">
+            <div className="brand-frame relative aspect-[16/9] overflow-hidden rounded-2xl border border-headlight/30">
               <SceneImage
                 src="/media/gyros-preparo-lanches.webp"
                 alt="Bancada real de preparo dos lanches do Gyros Lanches"
@@ -74,8 +74,8 @@ export default function Menu() {
                 onClick={() => setActive(group.category)}
                 className={`shrink-0 rounded-full border px-4 py-2 font-body text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-headlight/60 ${
                   active === group.category
-                    ? 'border-flame bg-flame text-cream'
-                    : 'border-night-line bg-transparent text-smoke hover:border-headlight/50 hover:text-cream'
+                    ? 'border-headlight bg-headlight text-night'
+                    : 'border-night-line bg-night/40 text-smoke hover:border-headlight/60 hover:text-headlight'
                 }`}
               >
                 <span aria-hidden="true">{group.icon}</span> {group.category}

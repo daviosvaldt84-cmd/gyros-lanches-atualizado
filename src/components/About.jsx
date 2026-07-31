@@ -27,15 +27,15 @@ const gallery = [
 
 export default function About() {
   return (
-    <section id="sobre" className="border-t border-night-line py-20 md:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-10 px-5 md:grid-cols-2 md:px-8">
+    <section id="sobre" className="brand-section py-20 md:py-28">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 md:grid-cols-2 md:px-8">
         <div>
           <Reveal variant="left">
             <RouteSign>Sobre nós</RouteSign>
           </Reveal>
           <Reveal variant="left" delay={80}>
-            <h2 className="mt-4 font-display text-3xl text-cream md:text-4xl">
-              Conheça o Gyros Lanches
+            <h2 className="mt-4 font-display text-3xl font-bold text-cream md:text-4xl">
+              Conheça o <span className="gold-text">Gyros Lanches</span>
             </h2>
           </Reveal>
           <Reveal variant="left" delay={140}>
@@ -48,6 +48,12 @@ export default function About() {
               Das opções clássicas de xis aos pastéis, dogs, porções e bebidas, tudo acontece em um lugar que já virou parte da identidade do negócio.
             </p>
           </Reveal>
+          <Reveal variant="left" delay={250}>
+            <div className="mt-7 flex items-center gap-3 border-l-2 border-headlight pl-4">
+              <img src="/media/gyros-logo.png" alt="" className="h-12 w-12 object-contain" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-headlight">Sabor, encontro e identidade na Praça Alvorada.</p>
+            </div>
+          </Reveal>
         </div>
 
         <Reveal variant="right" delay={100}>
@@ -57,7 +63,7 @@ export default function About() {
                 key={photo.src}
                 src={photo.src}
                 alt={photo.alt}
-                className={`rounded-xl border border-night-line ${photo.className}`}
+                className={`brand-frame rounded-xl border border-headlight/25 ${photo.className}`}
                 imageClassName="object-center"
               />
             ))}

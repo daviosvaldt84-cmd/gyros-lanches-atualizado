@@ -22,13 +22,13 @@ const highlights = [
 
 export default function Reviews() {
   return (
-    <section className="border-t border-night-line py-20 md:py-28">
+    <section className="brand-section py-20 md:py-28">
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <Reveal>
           <RouteSign>Avaliações</RouteSign>
         </Reveal>
         <Reveal delay={80}>
-          <h2 className="mt-4 font-display text-3xl text-cream md:text-4xl">
+          <h2 className="mt-4 font-display text-3xl font-bold text-cream md:text-4xl">
             Quem conhece, compartilha a experiência
           </h2>
         </Reveal>
@@ -44,7 +44,7 @@ export default function Reviews() {
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {highlights.map((highlight, index) => (
             <Reveal key={highlight.title} variant="scale" delay={index * 100}>
-              <article className="h-full rounded-2xl border border-night-line bg-night-card p-6">
+              <article className="brand-card h-full rounded-2xl border border-night-line p-6 transition-colors hover:border-headlight/55">
                 <span className="text-3xl" aria-hidden="true">{highlight.icon}</span>
                 <h3 className="mt-4 font-display text-lg text-cream">{highlight.title}</h3>
                 <p className="mt-3 font-body text-sm leading-relaxed text-smoke">{highlight.text}</p>
@@ -59,7 +59,7 @@ export default function Reviews() {
               href={business.reviewsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-headlight/50 px-6 py-3 font-bold text-headlight transition-colors hover:bg-headlight hover:text-night focus:outline-none focus-visible:ring-4 focus-visible:ring-headlight/50"
+              className="outline-gold inline-flex items-center gap-2 rounded-sm border px-6 py-3 font-bold transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-headlight/50"
             >
               ⭐ Ver avaliações no Google
             </a>
